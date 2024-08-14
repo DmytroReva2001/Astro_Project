@@ -5,7 +5,7 @@ const props = Astro.props;
 <footer>
   <div class="info">
     <h3>Información general:</h3>
-    <p>&copy; 2024 {props.nombre}</p>
+    <p>Derechos de autor &copy; 2024 {props.nombre}.<br>Todos los derechos reservados.</p>
     <p>Email: <a href="mailto:{props.email}">{props.email}</a></p>
     <p>Teléfono: <a href="tel:{props.telefono}">{props.telefono}</a></p>
   </div>
@@ -14,13 +14,10 @@ const props = Astro.props;
     <h3>Enlaces:</h3>
     <ul>
       <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#blog">Blog</a></li>
       <li><a href="#cv">Currículum Vitae</a></li>
       <li><a href="#contacto">Contacto</a></li>
       <li><a href="#portafolio">Portafolio</a></li>
-      <li><a href="#testimonios">Testimonios</a></li>
       <li><a href="#habilidades">Habilidades</a></li>
-      <li><a href="#blogroll">Blogroll</a></li>
     </ul>
   </div>
 
