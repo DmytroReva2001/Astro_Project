@@ -1,0 +1,37 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Card from "../components/Card.astro";
+import Layout from "../layouts/Layout.astro";
+import { data } from "../components/Data.astro";
+---
+
+<Layout title={"Portafolio de " + data.nombre}>
+  <main>
+    <Header />
+      <h1>Portafolio: Proyectos realizados</h1>
+      <Card src="1"/>
+      <Card src="2"/>
+      <Card src="3"/>
+      <Card src="4"/>
+    <Footer />
+  </main>
+
+  <style>
+    body {
+      background-color: #f9f9f9;
+    }
+
+    main {
+      width: 99%;
+      margin: auto;
+      padding: 1%;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      color: #333;
+    }
+  </style></Layout
+>
