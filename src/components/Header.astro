@@ -1,55 +1,49 @@
 ---
 const props = Astro.props;
-
 ---
 
 <header>
-    <h1>{props.nombre}</h1>
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#cv">Currículum Vitae</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li><a href="#portafolio">Portafolio</a></li>
-            <li><a href="#testimonios">Testimonios</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#blogroll">Blogroll</a></li>
-        </ul>
-    </nav>
+  <h1>{props.nombre}</h1>
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#cv">Currículum Vitae</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#portafolio">Portafolio</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#blogroll">Blogroll</a></li>
+    </ul>
+  </nav>
 </header>
 
 <style>
-    
     header {
-        background: var(--accent-gradient);
-        color: white;
-        text-align: center;
+      background-color: #f0f0f0;
+      color: #333;
+      padding: 20px 0;
+      text-align: center;
     }
-    
+  
     h1 {
-        padding-top: 1%;
+      font-size: 2em;
+      margin: 0;
     }
-
-    nav ul {
-        list-style-type: none;
-        display: flex;
-        justify-content: center;
-        padding-bottom: 1%;
-    }
-
+  
     nav ul li {
-        margin-left: 1%;
-        margin-right: 1%;
+      display: inline-block;
+      margin-right: 10px;
     }
-
+  
     nav ul li a {
-        color: white;
-        text-decoration: none;
+      color: #666;
+      text-decoration: none;
+      font-size: 1.2em;
     }
-
-    nav ul li a:hover
-    {
-        color: black
+  
+    nav ul li a:hover {
+      color: #000;
+      text-decoration: underline;
     }
-</style>
+  </style>

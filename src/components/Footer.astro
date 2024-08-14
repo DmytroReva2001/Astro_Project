@@ -62,69 +62,54 @@ const props = Astro.props;
 
 <style>
   footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--accent-gradient);
-    color: rgb(255, 255, 255);
-    padding: 2%;
-  }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
 
-  .info {
-    flex: 1;
-  }
+.info,
+.links,
+.social {
+  flex: 1;
+  margin: 0 10px;
+}
 
-  .links {
-    flex: 1;
-  }
+h3 {
+  color: #333;
+}
 
-  .social {
-    flex: 1;
-    text-align: right;
-  }
+p {
+  margin: 5px 0;
+  color: #666;
+}
 
-  .social svg {
-    background: rgb(var(--accent-light));
-    border-radius: 50%;
-    border: 2px solid black;
-  }
+ul {
+  list-style: none;
+  padding: 0;
+}
 
-  footer a {
-    color: white;
-    text-decoration: none;
-  }
+a {
+  color: #007bff;
+  text-decoration: none;
+}
 
-  footer a:hover {
-    color: black;
-  }
+a:hover {
+  text-decoration: underline;
+}
 
-  .social,
-  .links {
-    text-align: left;
-  }
+svg {
+  margin-right: 10px;
+  transition: transform 0.3s;
+}
 
-  .social svg {
-    background: rgb(var(--accent));
-    padding: 2%;
-    margin: 1px;
-    border-radius: 50%;
-    border: 1px solid black; /* Agregar borde de 2px color negro */
-  }
+.social a {
+  display: inline-block;
+  margin-top: 10px;
+}
 
-  .social a :hover {
-    background-color: rgb(207, 91, 14);
-  }
-
-  ul {
-    list-style-type: none;
-  }
-
-  ul li a {
-    color: white;
-    text-decoration: none;
-  }
-
-  ul li a:hover {
-    color: black;
-  }
+.social svg:hover {
+  transform: scale(1.2);
+}
 </style>
