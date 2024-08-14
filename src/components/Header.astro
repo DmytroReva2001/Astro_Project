@@ -3,7 +3,12 @@ import { data } from '../components/Data.astro';
 ---
 
 <header>
-  <h1>{data.nombre}</h1>
+  <div class="dr">
+    <a href="/#">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="D--Streamline-Typeface" height="50" width="50"><desc>D Streamline Icon: https://streamlinehq.com</desc><path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M6.857142857142857 1.7142857142857142v20.57142857142857h5.142857142857142a5.142857142857142 5.142857142857142 0 0 0 5.142857142857142 -5.142857142857142V6.857142857142857a5.142857142857142 5.142857142857142 0 0 0 -5.142857142857142 -5.142857142857142H6.857142857142857Z" stroke-width="1"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="R--Streamline-Typeface" height="50" width="50"><desc>R Streamline Icon: https://streamlinehq.com</desc><path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M6.857142857142857 22.285714285714285V13.714285714285714m0 0V1.7142857142857142h5.142857142857142a5.142857142857142 5.142857142857142 0 0 1 5.142857142857142 5.142857142857142v1.7142857142857142a5.142857142857142 5.142857142857142 0 0 1 -5.142857142857142 5.142857142857142H6.857142857142857Zm6.857142857142857 0 4.285714285714286 8.571428571428571" stroke-width="1"></path></svg>
+    </a>
+  </div>
   <nav>
     <ul>
       <li><a href="/#">Inicio</a></li>
@@ -40,8 +45,13 @@ import { data } from '../components/Data.astro';
     }
   
     nav ul li a:hover {
-      color: #000;
-      text-decoration: underline;
+      color: var(--text-color);
+    }
+
+    .dr a
+    {
+      text-decoration: none;
+      background-color: var(--primary-color);
     }
 
     @media only screen and (max-width: 600px) {
