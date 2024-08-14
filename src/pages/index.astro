@@ -3,22 +3,20 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 
-const nombre = "Dmytro Reva";
-const rol = "desarrollador junior";
-const email = "dmytro.reva@eviden.com";
-const telefono = "+34636851972";
+
+import { data } from '../components/Data.astro';
 ---
 
-<Layout <Layout title={"Página de " + nombre + " (Astro JS)"}>>
+<Layout title={"Página de " + data.nombre + " (Astro JS)"}>
     <main>
-        <Header nombre={nombre}/>
+        <Header/>
         <div class="content">
-        <h1>¡Bienvenido a mi sitio web! Soy {nombre}, {rol}.</h1>
+        <h1>¡Bienvenido a mi sitio web! Soy {data.nombre}, {data.role}.</h1>
         <h2>Aquí encontrarás una combinación única de blog y currículum vitae, donde comparto mis experiencias, proyectos y conocimientos.</h2>
         <p>Soy apasionado por lo que hago y cada día trato de aprender más y me encanta compartir todo lo que he aprendido a lo largo de mi carrera. Espero que encuentres información útil y te animes a explorar más sobre mi trayectoria y trabajos.</p>
         <p>¡Gracias por visitar! Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto conmigo a través de mi página de contacto. ¡Disfruta navegando por mi sitio!</p>
         </div>
-        <Footer nombre={nombre}, email={email}, telefono={telefono}>
+        <Footer>
     </main>
 </Layout>
 
