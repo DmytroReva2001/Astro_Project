@@ -1,5 +1,4 @@
 ---
-import Card from '../components/Card.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
@@ -24,17 +23,43 @@ const telefono = "+34636851972";
 </Layout>
 
 <style>
+    body {
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        width: 95%;
+        margin: 0 auto;
+        padding: 2%;
+    }
+
     .content {
-        color: white;
-        font-size: 20px;
-        line-height: 1.5;
-        padding-left: 2%;
-        padding-right: 2%;
+        background-color: #fff;
+        color: #333;
+        font-size: 18px;
+        line-height: 1.6;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         text-align: justify;
     }
 
-    h1
-    {
+    h1 {
         text-align: center;
+        font-size: 2em;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    p {
+        margin-bottom: 15px;
     }
 </style>
