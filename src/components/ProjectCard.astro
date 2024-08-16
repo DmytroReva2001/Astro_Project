@@ -1,7 +1,6 @@
 ---
 const project = Astro.props.project;
 ---
-
 <div class="card">
   <img src={project.img} alt={project.nombre} />
   <div>
@@ -10,6 +9,7 @@ const project = Astro.props.project;
   </div>
 
   <div class="tec-icon">
+    <h2>Tecnologías:</h2>
     {project.technologies.map((tech: { img: string, url: string }) => (
     <a href={tech.url}><img src={tech.img} alt="Tecnología" /></a>
   ))}
@@ -28,7 +28,7 @@ const project = Astro.props.project;
     background-color: #f0f0f0;
     display: inline-block;
     width: 20%;
-    height: 550px;
+    height: 600px;
   }
 
   .card:hover {
@@ -39,12 +39,7 @@ const project = Astro.props.project;
   img {
     width: 100%;
     height: 350px;
-    border-radius: 10px 10px 0 0;
-  }
-
-  .card-content {
-    padding: 2%;
-    text-align: center;
+    border-radius: 10px 10px 10px 10px;
   }
 
   h2 {
@@ -75,4 +70,3 @@ const project = Astro.props.project;
     text-align: center;
   }
 </style>
-

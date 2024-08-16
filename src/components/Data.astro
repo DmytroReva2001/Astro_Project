@@ -1,9 +1,147 @@
 ---
 // Simulación de BD
 export const data = {
-    nombre: "Dmytro Reva",
-    role: "desarrollador junior",
-    email: "dmytro.reva@eviden.com",
-    telefono: "+34636851972"
+  nombre: "Dmytro Reva",
+  role: "desarrollador junior",
+  email: "dmytro.reva@eviden.com",
+  telefono: "+34636851972",
 };
+
+export const urls = {
+  inicio: "/#",
+  cv: "cv",
+  contacto: "contacto",
+  portafolio: "portafolio",
+  habilidades: "habilidades",
+};
+
+export const projects = [
+  {
+    img: "https://cdn.icon-icons.com/icons2/1369/PNG/512/-person_90382.png",
+    nombre: "Blog/CV Dmytro Reva",
+    desc: "ESTA WEB, es uno de los proyectos de mi portfolio desarrollado con Astro JS",
+    technologies: [
+      {
+        img: "https://seeklogo.com/images/A/astro-icon-logo-44253BACEE-seeklogo.com.png",
+        url: "https://docs.astro.build/es/concepts/why-astro/",
+      },
+      {
+        img: "https://miro.medium.com/v2/resize:fit:900/1*TY9uBBO9leUbRtlXmQBiug.png",
+        url: "https://nodejs.org/docs/latest/api/",
+      },
+      {
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
+        url: "https://es.wikipedia.org/wiki/TypeScript",
+      }
+    ],
+  },
+  {
+    img: "/logo.png",
+    nombre: "Roma",
+    desc: "Tienda online, vista desarrollada con Angular",
+    technologies: [
+      {
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png",
+        url: "https://docs.angular.lat/guide/architecture",
+      },
+      {
+        img: "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png",
+        url: "https://www.java.com/es/download/help/whatis_java.html",
+      },
+      {
+        img: "https://miro.medium.com/v2/resize:fit:900/1*TY9uBBO9leUbRtlXmQBiug.png",
+        url: "https://nodejs.org/docs/latest/api/",
+      },
+      {
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
+        url: "https://es.wikipedia.org/wiki/TypeScript",
+      }
+    ],
+  },
+  {
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1uGHVr4rTpPSEyrbPGZgxUzZf5jCUXii_sw&s",
+    nombre: "Timbiriche",
+    desc: "Juego desarrollado en Java, proyecto de Grado Superior",
+    technologies: [
+      {
+        img: "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png",
+        url: "https://www.java.com/es/download/help/whatis_java.html",
+      },
+    ],
+  },
+  {
+    img: "https://clienty.es/wp-content/uploads/2023/06/tpv-para-restaurantes-comandero-precios.webp",
+    nombre: "TPV Android",
+    desc: "Programa en Java para Android para convertir un teléfono estándar a un TPV",
+    technologies: [
+      {
+        img: "https://formacioncis.com/wp-content/uploads/2018/10/Android_logo.png",
+        url: "https://es.wikipedia.org/wiki/Android",
+      },
+      {
+        img: "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png",
+        url: "https://www.java.com/es/download/help/whatis_java.html",
+      },
+    ],
+  },
+  {
+    img: "https://cdn-icons-png.flaticon.com/512/1175/1175149.png",
+    nombre: "Chat Java",
+    desc: "Programa en Java para escritorio para un simple chat en la misma red",
+    technologies: [
+      {
+        img: "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png",
+        url: "https://www.java.com/es/download/help/whatis_java.html",
+      },
+    ],
+  },
+];
+
+export const skills = [
+  {
+    img: "https://miro.medium.com/v2/resize:fit:1400/1*nLbfO_PdTSpeCdZQuUr8RQ.png",
+    nombre: "Astro JS",
+    desc: "bajo",
+  },
+  {
+    img: "https://education.oracle.com/file/general/p-80-java.png",
+    nombre: "Java",
+    desc: "alto"
+  },
+  {
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
+    nombre: "JavaScript",
+    desc: "medio",
+  },
+  {
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png",
+    nombre: "Angular",
+    desc: "medio",
+  },
+  {
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/640px-PHP-logo.svg.png",
+    nombre: "PHP",
+    desc: "bajo",
+  },
+  {
+    img: "https://visionyvalor.es/wp-content/uploads/2024/03/Python-Symbol_0-3.png",
+    nombre: "Python",
+    desc: "bajo",
+  },
+  {
+    img: "https://www.bigbaydata.com/wp-content/uploads/2022/11/sql_ejercicios.png",
+    nombre: "SQL",
+    desc: "alto",
+  },
+  {
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
+    nombre: "TypeScript",
+    desc: "medio",
+  },
+  {
+    img: "https://nautalis.net/extras/imagenes/2023/nautalis.es.vKUsfNybwu32XPJYmk8fjRCe6lUAURnxrqWmDDjb5PBvXSxcfs.png",
+    nombre: "HTML/CSS",
+    desc: "alto",
+  },
+];
 ---

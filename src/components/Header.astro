@@ -1,10 +1,10 @@
 ---
-import { data } from "../components/Data.astro";
+import { urls } from "../components/Data.astro";
 ---
 
 <header>
   <div class="dr">
-    <a href="/#">
+    <a href={urls.inicio}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -37,11 +37,11 @@ import { data } from "../components/Data.astro";
   </div>
   <nav>
     <ul>
-      <li><a href="/#">Inicio</a></li>
-      <li><a href="#">Currículum Vitae</a></li>
-      <li><a href="contacto">Contacto</a></li>
-      <li><a href="portafolio">Portafolio</a></li>
-      <li><a href="#">Habilidades</a></li>
+      <li><a href={urls.inicio}>Inicio</a></li>
+      <li><a href={urls.cv}>Currículum Vitae</a></li>
+      <li><a href={urls.contacto}>Contacto</a></li>
+      <li><a href={urls.portafolio}>Portafolio</a></li>
+      <li><a href={urls.habilidades}>Habilidades</a></li>
     </ul>
   </nav>
 </header>

@@ -1,24 +1,22 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import ProjectCard from "../components/ProjectCard.astro";
 import Layout from "../layouts/Layout.astro";
-import { data, projects } from "../components/Data.astro";
+import { data, skills } from "../components/Data.astro";
+import SkillCard from "../components/SkillCard.astro";
 ---
 
-<Layout title={"Portafolio de " + data.nombre}>
+<Layout title={"Habilidades de " + data.nombre}>
   <main>
     <Header />
-    <h1>Proyectos:</h1>
-
-    {
-      projects.map((project) => (
-        <a href={"/"+project.nombre}>
-          <ProjectCard project={project} />
-        </a>
-      ))
-    }
-
+    <h1>Mis Habilidades:</h1>
+      {
+        skills.map((skill) => (
+          <a href={"/"+skill.nombre}>
+            <SkillCard skill={skill} />
+          </a>
+        ))
+      }
     <Footer />
   </main>
 

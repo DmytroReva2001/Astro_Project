@@ -1,0 +1,52 @@
+---
+const skill = Astro.props.skill;
+---
+
+<div class="card">
+  <img src={skill.img} alt={skill.nombre} />
+  <div>
+    <h2>{skill.nombre}</h2>
+    <p>Nivel: {skill.desc}</p>
+  </div>
+</div>
+
+<style>
+  .card {
+    margin: 1%;
+    padding: 1%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f0f0f0;
+    display: inline-block;
+    width: 20%;
+    height: 400px;
+    text-align: center;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px 10px 10px 10px;
+  }
+
+  .card-content {
+    padding: 2%;
+  }
+
+  h2 {
+    color: #333;
+    font-size: 23px;
+  }
+
+  p {
+    color: #666;
+    font-size: 20px;
+  }
+</style>
