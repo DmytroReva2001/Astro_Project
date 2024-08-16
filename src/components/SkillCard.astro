@@ -6,7 +6,7 @@ const skill = Astro.props.skill;
   <img src={skill.img} alt={skill.nombre} />
   <div>
     <h2>{skill.nombre}</h2>
-    <p>Nivel: {skill.desc}</p>
+    <p>Nivel: <strong>{skill.desc}</strong></p>
   </div>
 </div>
 

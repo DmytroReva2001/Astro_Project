@@ -12,7 +12,7 @@ import SkillCard from "../components/SkillCard.astro";
     <h1>Mis Habilidades:</h1>
       {
         skills.map((skill) => (
-          <a href={"/"+skill.nombre}>
+          <a href={skill.url} target="_blank">
             <SkillCard skill={skill} />
           </a>
         ))

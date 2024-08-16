@@ -11,7 +11,7 @@ const project = Astro.props.project;
   <div class="tec-icon">
     <h2>Tecnologías:</h2>
     {project.technologies.map((tech: { img: string, url: string }) => (
-    <a href={tech.url}><img src={tech.img} alt="Tecnología" /></a>
+    <a href={tech.url} target="_blank"><img src={tech.img} alt="Tecnología" /></a>
   ))}
   </div>
 </div>
