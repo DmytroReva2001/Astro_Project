@@ -8,8 +8,11 @@ const project = Astro.props.project;
     <h2>{project.nombre}</h2>
     <p>{project.desc}</p>
   </div>
+
   <div class="tec-icon">
-	<img src={project.tecnology} alt="Tecnología" />
+    {project.technologies.map((tech: { img: string, url: string }) => (
+    <a href={tech.url}><img src={tech.img} alt="Tecnología" /></a>
+  ))}
   </div>
 </div>
 
@@ -55,8 +58,9 @@ const project = Astro.props.project;
   }
 
   .tec-icon img{
-    width:auto;
+  width:auto;
 	height: 50px;
+  padding: 3%;
   }
 
   .tec-icon img {
