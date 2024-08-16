@@ -1,52 +1,74 @@
 ---
-import { project1, project2, project3, project4 } from "./Projects.astro";
-
+const project = Astro.props.project;
 ---
 
 <div class="card">
-	<img src={project2.img} alt={project2.nombre}>
-	<div class="card-content">
-	  <h2>{project2.nombre}</h2>
-	  <p>{project2.desc}</p>
-	</div>
+  <img src={project.img} alt={project.nombre} />
+  <div>
+    <h2>{project.nombre}</h2>
+    <p>{project.desc}</p>
   </div>
-  
-  <style>
-	.card {
-	  margin: 1%;
-	  padding: 1%;
-	  border: 1px solid #ccc;
-	  border-radius: 10px;
-	  overflow: hidden;
-	  transition: transform 0.3s;
-	  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	  background-color: #f0f0f0;
-	  display: inline-block;
-	  width: 20%; /* Ajustar el ancho según la cantidad de cards por fila */
-	}
-  
-	.card:hover {
-	  transform: translateY(-5px);
-	  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-	}
-  
-	img {
-	  width: 100%;
-	  border-radius: 10px 10px 0 0;
-	}
-  
-	.card-content {
-	  padding: 2%;
-	  text-align: center;
-	}
-  
-	h2 {
-	  color: #333;
-	  font-size: 23px;
-	}
-  
-	p {
-	  color: #666;
-	  font-size: 15px;
-	}
-  </style>  
+  <div class="tec-icon">
+	<img src={project.tecnology} alt="Tecnología" />
+  </div>
+</div>
+
+<style>
+  .card {
+    margin: 1%;
+    padding: 1%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f0f0f0;
+    display: inline-block;
+    width: 20%;
+    height: 550px;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .card-content {
+    padding: 2%;
+    text-align: center;
+  }
+
+  h2 {
+    color: #333;
+    font-size: 23px;
+  }
+
+  p {
+    color: #666;
+    font-size: 15px;
+  }
+
+  .tec-icon img{
+    width:auto;
+	height: 50px;
+  }
+
+  .tec-icon img {
+    transition: transform 0.3s;
+  }
+
+  .tec-icon img:hover {
+    transform: scale(1.2);
+  }
+
+  .tec-icon {
+    text-align: center;
+  }
+</style>
+

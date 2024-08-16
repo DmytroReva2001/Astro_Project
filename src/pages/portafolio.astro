@@ -4,16 +4,22 @@ import Header from "../components/Header.astro";
 import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
 import { data } from "../components/Data.astro";
+import { projects } from "../components/Projects.astro";
 ---
 
 <Layout title={"Portafolio de " + data.nombre}>
   <main>
     <Header />
-      <h1>Portafolio: Proyectos realizados</h1>
-      <Card src="1"/>
-      <Card src="2"/>
-      <Card src="3"/>
-      <Card src="4"/>
+    <h1>Portafolio: Proyectos realizados</h1>
+
+    {
+      projects.map((project) => (
+        <a href="/#">
+          <Card project={project} />
+        </a>
+      ))
+    }
+
     <Footer />
   </main>
 
@@ -26,6 +32,7 @@ import { data } from "../components/Data.astro";
       width: 99%;
       margin: auto;
       padding: 1%;
+      text-decoration: none;
     }
 
     h1 {
@@ -33,5 +40,5 @@ import { data } from "../components/Data.astro";
       font-size: 2em;
       color: #333;
     }
-  </style></Layout
->
+  </style>
+</Layout>
