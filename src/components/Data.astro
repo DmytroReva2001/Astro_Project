@@ -1,8 +1,17 @@
 ---
 import { pool } from '../db';
 
+export const urls = {
+  inicio: "/#",
+  cv: "cv",
+  contacto: "contacto",
+  portafolio: "portafolio",
+  habilidades: "habilidades",
+};
+
 // Definimos una interfaz para tipar los datos que obtenemos de la base de datos
-interface Contacto {
+interface Data {
+  id: number;
   dato: string;
   valor: string;
 }
@@ -10,13 +19,13 @@ interface Contacto {
 export async function getDatos() {
   try {
     // Especifica el tipo de resultado esperado de la consulta
-    const [rows] = await pool.query<Contacto[]>('SELECT * FROM datos');
+    const [rows] = await pool.query<Data[]>('SELECT * FROM datos');
     
     // Inicializamos un objeto con un tipo explícito
     let data: { [key: string]: string } = {};
 
     // Recorre las filas obtenidas para construir el objeto `data`
-    rows.forEach((row: Contacto) => {
+    rows.forEach((row: Data) => {
       data[row.dato] = row.valor; // Mapea cada dato con su valor correspondiente
     });
 
@@ -26,156 +35,95 @@ export async function getDatos() {
   }
 }
 
-export const urls = {
-  inicio: "/#",
-  cv: "cv",
-  contacto: "contacto",
-  portafolio: "portafolio",
-  habilidades: "habilidades",
-};
+interface Project {
+  id: number;
+  img: string;
+  nombre: string;
+  descripcion: string;
+  tecnologias: Tecnology[];
+}
 
-export const projects = [
-  {
-    img: "https://cdn.icon-icons.com/icons2/1369/PNG/512/-person_90382.png",
-    nombre: "Blog/CV Dmytro Reva",
-    desc: "ESTA WEB, es uno de los proyectos de mi portfolio desarrollado con Astro JS",
-    technologies: [
-      {
-        img: "https://seeklogo.com/images/A/astro-icon-logo-44253BACEE-seeklogo.com.png",
-        url: "https://docs.astro.build/es/concepts/why-astro/",
-      },
-      {
-        img: "https://miro.medium.com/v2/resize:fit:900/1*TY9uBBO9leUbRtlXmQBiug.png",
-        url: "https://nodejs.org/docs/latest/api/",
-      },
-      {
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
-        url: "https://es.wikipedia.org/wiki/TypeScript",
-      }
-    ],
-  },
-  {
-    img: "/logo.png",
-    nombre: "Roma",
-    desc: "Tienda online, vista desarrollada con Angular",
-    technologies: [
-      {
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png",
-        url: "https://docs.angular.lat/guide/architecture",
-      },
-      {
-        img: "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png",
-        url: "https://www.java.com/es/download/help/whatis_java.html",
-      },
-      {
-        img: "https://miro.medium.com/v2/resize:fit:900/1*TY9uBBO9leUbRtlXmQBiug.png",
-        url: "https://nodejs.org/docs/latest/api/",
-      },
-      {
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
-        url: "https://es.wikipedia.org/wiki/TypeScript",
-      }
-    ],
-  },
-  {
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1uGHVr4rTpPSEyrbPGZgxUzZf5jCUXii_sw&s",
-    nombre: "Timbiriche",
-    desc: "Juego desarrollado en Java, proyecto de Grado Superior",
-    technologies: [
-      {
-        img: "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png",
-        url: "https://www.java.com/es/download/help/whatis_java.html",
-      },
-    ],
-  },
-  {
-    img: "https://clienty.es/wp-content/uploads/2023/06/tpv-para-restaurantes-comandero-precios.webp",
-    nombre: "TPV Android",
-    desc: "Programa en Java para Android para convertir un teléfono estándar a un TPV",
-    technologies: [
-      {
-        img: "https://formacioncis.com/wp-content/uploads/2018/10/Android_logo.png",
-        url: "https://es.wikipedia.org/wiki/Android",
-      },
-      {
-        img: "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png",
-        url: "https://www.java.com/es/download/help/whatis_java.html",
-      },
-    ],
-  },
-  {
-    img: "https://cdn-icons-png.flaticon.com/512/1175/1175149.png",
-    nombre: "Chat Java",
-    desc: "Programa en Java para escritorio para un simple chat en la misma red",
-    technologies: [
-      {
-        img: "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png",
-        url: "https://www.java.com/es/download/help/whatis_java.html",
-      },
-    ],
-  },
-];
+interface Tecnology {
+  id: number;
+  img: string;
+  url: string;
+}
 
-export const skills = [
-  {
-    img: "https://miro.medium.com/v2/resize:fit:1400/1*nLbfO_PdTSpeCdZQuUr8RQ.png",
-    nombre: "Astro JS",
-    desc: "bajo",
-    url:"https://docs.astro.build/es/concepts/why-astro/"
-  },
-  {
-    img: "https://education.oracle.com/file/general/p-80-java.png",
-    nombre: "Java",
-    desc: "alto",
-    url:"https://www.java.com/es/download/help/whatis_java.html"
-  },
-  {
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-    nombre: "JavaScript",
-    desc: "medio",
-    url: "https://es.wikipedia.org/wiki/JavaScript"
-  },
-  {
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png",
-    nombre: "Angular",
-    desc: "medio",
-    url: "https://docs.angular.lat/guide/architecture"
-  },
-  {
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/640px-PHP-logo.svg.png",
-    nombre: "PHP",
-    desc: "bajo",
-    url: "https://www.php.net/manual/es/intro-whatis.php"
-  },
-  {
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Python_logo_01.svg/2048px-Python_logo_01.svg.png",
-    nombre: "Python",
-    desc: "bajo",
-    url: "https://es.wikipedia.org/wiki/Python"
-  },
-  {
-    img: "https://www.stonebranch.com/integration-hub/media/3c/64/66/1636642258/Stonebranch_SQL_Vendor_Product_Logo.svg",
-    nombre: "SQL",
-    desc: "alto",
-    url: "https://es.wikipedia.org/wiki/SQL"
-  },
-  {
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
-    nombre: "TypeScript",
-    desc: "medio",
-    url: "https://es.wikipedia.org/wiki/TypeScript"
-  },
-  {
-    img: "https://cdn-icons-png.flaticon.com/256/174/174854.png",
-    nombre: "HTML",
-    desc: "alto",
-    url: "https://es.wikipedia.org/wiki/HTML"
-  },
-  {
-    img: "https://cdn3d.iconscout.com/3d/free/thumb/free-css3-3d-logo-download-in-png-blend-fbx-gltf-file-formats--html-language-programming-brand-vol-1-pack-logos-3640300.png?f=webp",
-    nombre: "CSS",
-    desc: "alto",
-    url: "https://es.wikipedia.org/wiki/CSS"
-  },
-];
+export async function getProjects(): Promise<Project[] | undefined> {
+  try {
+    // Consulta para obtener proyectos con sus tecnologías asociadas y las imágenes correspondientes
+    const [rows] = await pool.query<any[]>(
+      `SELECT 
+         p.id AS projectId, 
+         p.nombre AS projectName, 
+         p.descripcion AS projectDescription, 
+         p.img AS projectImg,
+         t.id AS techId, 
+         t.img AS techImg, 
+         t.url AS techUrl
+       FROM 
+         projects p
+       LEFT JOIN 
+         projects_tecnologias pt ON p.id = pt.project_id
+       LEFT JOIN 
+         tecnologias t ON pt.tecnologia_id = t.id
+       ORDER BY 
+         p.id, t.id`
+    );
+
+    // Procesa los resultados para agrupar las tecnologías por proyecto
+    const projectsMap = new Map<number, Project>();
+
+    for (const row of rows) {
+      const projectId = row.projectId;
+
+      if (!projectsMap.has(projectId)) {
+        projectsMap.set(projectId, {
+          id: projectId,
+          nombre: row.projectName,
+          descripcion: row.projectDescription,
+          img: row.projectImg,
+          tecnologias: []
+        });
+      }
+
+      if (row.techId) {
+        projectsMap.get(projectId)?.tecnologias?.push({
+          id: row.techId,
+          img: row.techImg,  // Utiliza la URL de la imagen de la tecnología
+          url: row.techUrl   // Asumiendo que también se quiere usar la URL para otro propósito
+        });
+      }
+    }
+
+    // Convierte el mapa a un array
+    const projects = Array.from(projectsMap.values());
+
+    return projects;
+
+  } catch (error) {
+    console.error('Error al obtener datos de proyectos:', error);
+    return undefined;
+  }
+}
+
+interface Habilidades {
+  id: number;
+  img: string;
+  nombre: string;
+  descripcion: string;
+  url: string;
+}
+
+export async function getHabilidades(): Promise<Habilidades[] | undefined> {
+  try {
+    // Especifica el tipo de resultado esperado de la consulta
+    const [rows] = await pool.query<Habilidades[]>('SELECT * FROM habilidades');  
+
+    return rows;
+  } catch (error) {
+    console.error('Error al obtener datos de habilidades:', error);
+    return undefined;
+  }
+}
 ---

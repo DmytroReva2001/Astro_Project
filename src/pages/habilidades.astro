@@ -2,11 +2,11 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
-import { skills } from "../components/Data.astro";
 import SkillCard from "../components/SkillCard.astro";
 
-import { getDatos } from "../components/Data.astro";
+import { getDatos, getHabilidades } from "../components/Data.astro";
 let data = await getDatos();
+let habilidades = await getHabilidades();
 ---
 
 <Layout title={"Habilidades de " + data?.nombre}>
@@ -14,11 +14,11 @@ let data = await getDatos();
     <Header />
     <h1>Mis Habilidades:</h1>
       {
-        skills.map((skill) => (
-          <a href={skill.url} target="_blank">
-            <SkillCard skill={skill} />
-          </a>
-        ))
+        habilidades?.map((habilidad) => (
+        <a href={habilidad.url}>
+          <SkillCard skill={habilidad} />
+        </a>
+      ))
       }
     <Footer />
   </main>

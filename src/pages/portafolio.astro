@@ -3,9 +3,9 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Layout from "../layouts/Layout.astro";
-import { projects } from "../components/Data.astro";
-import { getDatos } from "../components/Data.astro"; // Cambia esta ruta según tu estructura de directorios
+import { getDatos, getProjects } from "../components/Data.astro"; // Cambia esta ruta según tu estructura de directorios
 let data = await getDatos();
+let projects = await getProjects();
 ---
 
 <Layout title={"Portafolio de " + data?.nombre}>
@@ -14,7 +14,7 @@ let data = await getDatos();
     <h1>Proyectos:</h1>
 
     {
-      projects.map((project) => (
+      projects?.map((project) => (
         <a href={"/"+project.nombre}>
           <ProjectCard project={project} />
         </a>
