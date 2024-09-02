@@ -2,11 +2,14 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
-import { data, skills } from "../components/Data.astro";
+import { skills } from "../components/Data.astro";
 import SkillCard from "../components/SkillCard.astro";
+
+import { getDatos } from "../components/Data.astro";
+let data = await getDatos();
 ---
 
-<Layout title={"Habilidades de " + data.nombre}>
+<Layout title={"Habilidades de " + data?.nombre}>
   <main>
     <Header />
     <h1>Mis Habilidades:</h1>

@@ -3,10 +3,12 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Layout from "../layouts/Layout.astro";
-import { data, projects } from "../components/Data.astro";
+import { projects } from "../components/Data.astro";
+import { getDatos } from "../components/Data.astro"; // Cambia esta ruta según tu estructura de directorios
+let data = await getDatos();
 ---
 
-<Layout title={"Portafolio de " + data.nombre}>
+<Layout title={"Portafolio de " + data?.nombre}>
   <main>
     <Header />
     <h1>Proyectos:</h1>

@@ -3,14 +3,15 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 
-import { data } from "../components/Data.astro";
+import { getDatos } from "../components/Data.astro"; // Cambia esta ruta según tu estructura de directorios
+let data = await getDatos();
 ---
 
-<Layout title={"Página de " + data.nombre + " (Astro JS)"}>
+<Layout title={"Página de " + data?.nombre + " (Astro JS)"}>
   <main>
     <Header />
     <div class="content">
-      <h1>¡Bienvenido a mi sitio web! Soy {data.nombre}, {data.role}.</h1>
+      <h1>¡Bienvenido a mi sitio web! Soy {data?.nombre}, {data?.role}.</h1>
       <h2>
         Aquí encontrarás una combinación única de blog y currículum vitae, donde
         comparto mis experiencias, proyectos y conocimientos.

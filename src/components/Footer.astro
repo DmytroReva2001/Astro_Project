@@ -1,13 +1,15 @@
 ---
-import { data, urls } from '../components/Data.astro';
+import { urls } from '../components/Data.astro';
+import { getDatos } from "../components/Data.astro"; // Cambia esta ruta según tu estructura de directorios
+let data = await getDatos();
 ---
 
 <footer>
   <div class="info">
     <h3>Información general:</h3>
-    <p>Derechos de autor &copy; 2024 {data.nombre}.<br>Todos los derechos reservados.</p>
-    <p>Email: <a href={"mailto:"+data.email}>{data.email}</a></p>
-    <p>Teléfono: <a href={"tel:"+data.telefono}>{data.telefono}</a></p>
+    <p>Derechos de autor &copy; 2024 {data?.nombre}.<br>Todos los derechos reservados.</p>
+    <p>Email: <a href={"mailto:"+data?.email}>{data?.email}</a></p>
+    <p>Teléfono: <a href={"tel:"+data?.telefono}>{data?.telefono}</a></p>
   </div>
 
   <div class="links">

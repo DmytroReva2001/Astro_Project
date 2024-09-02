@@ -2,7 +2,8 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
-import { data } from "../components/Data.astro";
+import { getDatos } from "../components/Data.astro"; // Cambia esta ruta según tu estructura de directorios
+let data = await getDatos();
 ---
 
 <Layout title="Contacto">
@@ -10,11 +11,11 @@ import { data } from "../components/Data.astro";
     <Header />
     <div class="contact-info">
       <h2><b>Contacto:</b></h2>
-      <p><b>Nombre completo:</b> {data.nombre}</p>
-      <p><b>Email:</b> <a href={"mailto:" + data.email}>{data.email}</a></p>
+      <p><b>Nombre completo:</b> {data?.nombre}</p>
+      <p><b>Email:</b> <a href={"mailto:" + data?.email}>{data?.email}</a></p>
       <p>
         <b>Teléfono:</b>
-        <a href={"tel:" + data.telefono}>{data.telefono}</a>
+        <a href={"tel:" + data?.telefono}>{data?.telefono}</a>
       </p>
 
       <div class="availability">

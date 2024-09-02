@@ -1,11 +1,30 @@
 ---
-// Simulación de BD
-export const data = {
-  nombre: "Dmytro Reva",
-  role: "desarrollador junior",
-  email: "dmytro.reva@eviden.com",
-  telefono: "+34636851972",
-};
+import { pool } from '../db';
+
+// Definimos una interfaz para tipar los datos que obtenemos de la base de datos
+interface Contacto {
+  dato: string;
+  valor: string;
+}
+
+export async function getDatos() {
+  try {
+    // Especifica el tipo de resultado esperado de la consulta
+    const [rows] = await pool.query<Contacto[]>('SELECT * FROM datos');
+    
+    // Inicializamos un objeto con un tipo explícito
+    let data: { [key: string]: string } = {};
+
+    // Recorre las filas obtenidas para construir el objeto `data`
+    rows.forEach((row: Contacto) => {
+      data[row.dato] = row.valor; // Mapea cada dato con su valor correspondiente
+    });
+
+    return data;
+  } catch (error) {
+    console.error('Error al obtener datos de contacto:', error);
+  }
+}
 
 export const urls = {
   inicio: "/#",
