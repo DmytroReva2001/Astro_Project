@@ -2,8 +2,10 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 
 import { getDatos } from "../components/Data.astro"; // Cambia esta ruta según tu estructura de directorios
+import {urls} from "../components/Data.astro";
 let data = await getDatos();
 ---
 
@@ -27,6 +29,14 @@ let data = await getDatos();
         en ponerte en contacto conmigo a través de mi página de contacto.
         ¡Disfruta navegando por mi sitio!
       </p>
+      <h2>
+        Para empezar explorando puedes acceder a siguientes partes de mi página:
+      </h2>
+      <div class="temas">
+      <Card tema="CV" img="https://cdn-icons-png.flaticon.com/512/3846/3846805.png" url={urls.cv}></Card>
+      <Card tema="Portafolio" img="https://cdn-icons-png.flaticon.com/512/1063/1063376.png" url={urls.portafolio}></Card>
+      <Card tema="Habilidades" img="https://cdn-icons-png.flaticon.com/512/942/942781.png" url={urls.habilidades}></Card>
+    </div>
     </div>
     <Footer />
   </main>
@@ -62,7 +72,7 @@ let data = await getDatos();
     }
 
     h2 {
-      font-size: 1.5em;
+      font-size: 1.6em;
       color: #666;
       margin-bottom: 1%;
       text-align: center;
@@ -70,6 +80,12 @@ let data = await getDatos();
 
     p {
       margin-bottom: 1%;
+      font-size: 20px;
+    }
+
+    .temas
+    {
+      text-align: center;
     }
   </style></Layout
 >
