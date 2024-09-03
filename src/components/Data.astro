@@ -40,6 +40,7 @@ interface Project {
   img: string;
   nombre: string;
   descripcion: string;
+  url: string;
   tecnologias: Tecnology[];
 }
 
@@ -58,6 +59,7 @@ export async function getProjects(): Promise<Project[] | undefined> {
          p.nombre AS projectName, 
          p.descripcion AS projectDescription, 
          p.img AS projectImg,
+         p.url AS projectUrl,
          t.id AS techId, 
          t.img AS techImg, 
          t.url AS techUrl
@@ -83,6 +85,7 @@ export async function getProjects(): Promise<Project[] | undefined> {
           nombre: row.projectName,
           descripcion: row.projectDescription,
           img: row.projectImg,
+          url: row.projectUrl,
           tecnologias: []
         });
       }
