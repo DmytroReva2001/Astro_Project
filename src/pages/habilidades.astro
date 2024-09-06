@@ -13,6 +13,7 @@ let habilidades = await getHabilidades();
   <main>
     <Header />
     <h1>Mis Habilidades:</h1>
+    <div class="hability-cards">
       {
         habilidades?.map((habilidad) => (
         <a href={habilidad.url}>
@@ -20,6 +21,7 @@ let habilidades = await getHabilidades();
         </a>
       ))
       }
+      </div>
     <Footer />
   </main>
 
@@ -44,6 +46,19 @@ let habilidades = await getHabilidades();
     a
     {
       text-decoration: none;
+    }
+
+    .hability-cards
+    {
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hability-cards {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
     }
   </style>
 </Layout>
