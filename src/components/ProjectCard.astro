@@ -1,86 +1,84 @@
 ---
-const project = Astro.props.project;
+const project = Astro.props.project; // Se obtiene el proyecto de las propiedades de Astro
 ---
-<a href={project.url}>
-<div class="card">
-  <img src={project.img} alt={project.nombre} />
-  <div>
-    <h2>{project.nombre}</h2>
-    <p>{project.descripcion}</p>
+<a href={project.url}> <!-- Enlace que lleva a la URL del proyecto -->
+<div class="card"> <!-- Contenedor principal de la tarjeta del proyecto -->
+  <img src={project.img} alt={project.nombre} /> <!-- Imagen del proyecto con su nombre como texto alternativo -->
+  <div> <!-- Contenedor para el título y descripción -->
+    <h2>{project.nombre}</h2> <!-- Título del proyecto -->
+    <p>{project.descripcion}</p> <!-- Descripción del proyecto -->
   </div>
-  <div class="tec-icon">
-    <h2>Tecnologías:</h2>
-    {project.tecnologias.map((tech: { img: string, url: string }) => (
-    <a href={tech.url} target="_blank"><img src={tech.img} alt="Tecnología"/></a>
+  <div class="tec-icon"> <!-- Contenedor para los iconos de tecnología -->
+    <h2>Tecnologías:</h2> <!-- Título de la sección de tecnologías -->
+    {project.tecnologias.map((tech: { img: string, url: string }) => ( <!-- Mapeo de tecnologías -->
+    <a href={tech.url} target="_blank"><img src={tech.img} alt="Tecnología"/></a> <!-- Enlace a la tecnología con su imagen -->
   ))}
   </div>
 </div>
 </a>
 
 <style>
-  .card {
-    margin: 2%;
-    padding: 1%;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f0f0f0;
-    display: inline-block;
-    width: 20%;
-    height: fit-content;
+  .card { /* Estilo para la tarjeta del proyecto */
+    margin: 2%; /* Margen alrededor de la tarjeta */
+    padding: 1%; /* Relleno interno de la tarjeta */
+    border: 1px solid #ccc; /* Borde de la tarjeta */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta el contenido que desborda */
+    transition: transform 0.3s; /* Transición suave para el efecto hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra de la tarjeta */
+    background-color: #f0f0f0; /* Color de fondo de la tarjeta */
+    display: inline-block; /* Muestra tarjetas en línea */
+    width: 20%; /* Ancho de la tarjeta */
+    height: fit-content; /* Altura ajustada al contenido */
   }
 
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  .card:hover { /* Efecto al pasar el ratón sobre la tarjeta */
+    transform: translateY(-5px); /* Levanta la tarjeta ligeramente */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
   }
 
-  img {
-    width: 100%;
-    height: 300px;
-    border-radius: 10px 10px 10px 10px;
+  img { /* Estilo para las imágenes */
+    width: 100%; /* Ancho completo */
+    height: 300px; /* Altura fija */
+    border-radius: 10px 10px 10px 10px; /* Bordes redondeados */
   }
 
-  h2 {
-    color: #333;
-    font-size: 23px;
+  h2 { /* Estilo para los títulos */
+    color: #333; /* Color del texto */
+    font-size: 23px; /* Tamaño de fuente */
   }
 
-  p {
-    color: #666;
-    font-size: 15px;
+  p { /* Estilo para los párrafos */
+    color: #666; /* Color del texto */
+    font-size: 15px; /* Tamaño de fuente */
   }
 
-  .tec-icon img{
-  width:auto;
-	height: 50px;
-  padding: 3%;
+  .tec-icon img { /* Estilo para las imágenes de tecnologías */
+    width: auto; /* Ancho automático */
+    height: 50px; /* Altura fija */
+    padding: 3%; /* Relleno alrededor de las imágenes */
   }
 
-  .tec-icon img {
-    transition: transform 0.3s;
+  .tec-icon img { /* Transición para las imágenes de tecnologías */
+    transition: transform 0.3s; /* Transición suave al transformar */
   }
 
-  .tec-icon img:hover {
-    transform: scale(1.2);
+  .tec-icon img:hover { /* Efecto al pasar el ratón sobre las imágenes de tecnologías */
+    transform: scale(1.2); /* Aumenta el tamaño de la imagen */
   }
 
-  .tec-icon {
-    text-align: center;
+  .tec-icon { /* Estilo para el contenedor de iconos de tecnología */
+    text-align: center; /* Centra el texto */
   }
 
-  a
-  {
-    text-decoration: none;
+  a { /* Estilo para los enlaces */
+    text-decoration: none; /* Sin subrayado */
   }
 
-  @media (max-width: 768px) {
-      .card {
-        width: 95%;
-        text-align: center;
-
-      }
+  @media (max-width: 768px) { /* Estilo responsivo para pantallas pequeñas */
+    .card { /* Estilo para la tarjeta en pantallas pequeñas */
+      width: 95%; /* Ancho ajustado */
+      text-align: center; /* Centra el texto */
     }
+  }
 </style>

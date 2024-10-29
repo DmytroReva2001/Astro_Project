@@ -1,18 +1,18 @@
 ---
-const img = Astro.props.img;
-const tema = Astro.props.tema;
-const url = Astro.props.url;
+const img = Astro.props.img; // Obtiene la imagen de las propiedades de Astro
+const tema = Astro.props.tema; // Obtiene el tema de las propiedades de Astro
+const url = Astro.props.url; // Obtiene la URL de las propiedades de Astro
 ---
-<a href={url}>
-<div class="card">
-  <img src={img} alt={tema} />
-  <div>
-    <h2>{tema}</h2>
+<a href={url}> <!-- Crea un enlace que lleva a la URL especificada -->
+  <div class="card"> <!-- Contenedor de la tarjeta -->
+    <img src={img} alt={tema} /> <!-- Muestra la imagen con un texto alternativo del tema -->
+    <div>
+      <h2>{tema}</h2> <!-- Muestra el tema dentro de un encabezado h2 -->
+    </div>
   </div>
-</div>
-</a>
+  </a>
 
-<style>
+<style> /* Estilos de los elementos */
   .card {
     padding: 1%;
     margin:1%;
@@ -43,8 +43,7 @@ const url = Astro.props.url;
     font-size: 23px;
   }
 
-  a
-  {
+  a {
     text-decoration: none;
   }
 

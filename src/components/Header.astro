@@ -1,102 +1,106 @@
 ---
-import { urls } from "../components/Data.astro";
+import { urls } from "../components/Data.astro"; // Importa las URLs desde un archivo de datos.
 ---
 
 <header>
-  <div class="dr">
-    <a href={urls.inicio}>
+  <div class="dr"> <!-- Sección para el logotipo y enlaces. -->
+    <a href={urls.inicio}> <!-- Enlace al inicio. -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        id="D--Streamline-Typeface"
-        height="50"
+        fill="none" 
+        viewBox="0 0 24 24" 
+        id="D--Streamline-Typeface" 
+        height="50" 
         width="50"
-        ><desc>D Streamline Icon: https://streamlinehq.com</desc><path
-          stroke="#000000"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M6.857142857142857 1.7142857142857142v20.57142857142857h5.142857142857142a5.142857142857142 5.142857142857142 0 0 0 5.142857142857142 -5.142857142857142V6.857142857142857a5.142857142857142 5.142857142857142 0 0 0 -5.142857142857142 -5.142857142857142H6.857142857142857Z"
-          stroke-width="1"></path></svg
       >
+        <desc>D Streamline Icon: https://streamlinehq.com</desc> <!-- Descripción del ícono. -->
+        <path
+          stroke="#000000" 
+          stroke-linecap="round"
+          stroke-linejoin="round" 
+          d="M6.857142857142857 1.7142857142857142v20.57142857142857h5.142857142857142a5.142857142857142 5.142857142857142 0 0 0 5.142857142857142 -5.142857142857142V6.857142857142857a5.142857142857142 5.142857142857142 0 0 0 -5.142857142857142 -5.142857142857142H6.857142857142857Z"
+          stroke-width="1"></path> 
+      </svg>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         id="R--Streamline-Typeface"
-        height="50"
+        height="50" 
         width="50"
-        ><desc>R Streamline Icon: https://streamlinehq.com</desc><path
-          stroke="#000000"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M6.857142857142857 22.285714285714285V13.714285714285714m0 0V1.7142857142857142h5.142857142857142a5.142857142857142 5.142857142857142 0 0 1 5.142857142857142 5.142857142857142v1.7142857142857142a5.142857142857142 5.142857142857142 0 0 1 -5.142857142857142 5.142857142857142H6.857142857142857Zm6.857142857142857 0 4.285714285714286 8.571428571428571"
-          stroke-width="1"></path></svg
       >
+        <desc>R Streamline Icon: https://streamlinehq.com</desc> <!-- Descripción del ícono. -->
+        <path
+          stroke="#000000" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          d="M6.857142857142857 22.285714285714285V13.714285714285714m0 0V1.7142857142857142h5.142857142857142a5.142857142857142 5.142857142857142 0 0 1 5.142857142857142 5.142857142857142v1.7142857142857142a5.142857142857142 5.142857142857142 0 0 1 -5.142857142857142 5.142857142857142H6.857142857142857Zm6.857142857142857 0 4.285714285714286 8.571428571428571"
+          stroke-width="1"></path> <!-- Ancho del trazo. -->
+      </svg>
     </a>
-  </div>
-  <nav>
-    <ul>
-      <li><a href={urls.inicio}>Inicio</a></li>
-      <li><a href={urls.cv}>Currículum Vitae</a></li>
-      <li><a href={urls.contacto}>Contacto</a></li>
-      <li><a href={urls.portafolio}>Portafolio</a></li>
-      <li><a href={urls.habilidades}>Habilidades</a></li>
+  </div> <!-- Fin de la sección del logotipo y enlaces. -->
+  <nav> <!-- Sección de navegación. -->
+    <ul> <!-- Lista de enlaces de navegación. -->
+      <li><a href={urls.inicio}>Inicio</a></li> <!-- Enlace a Inicio. -->
+      <li><a href={urls.cv}>Currículum Vitae</a></li> <!-- Enlace al Currículum Vitae. -->
+      <li><a href={urls.contacto}>Contacto</a></li> <!-- Enlace a Contacto. -->
+      <li><a href={urls.portafolio}>Portafolio</a></li> <!-- Enlace a Portafolio. -->
+      <li><a href={urls.habilidades}>Habilidades</a></li> <!-- Enlace a Habilidades. -->
     </ul>
   </nav>
 </header>
 
-<style>
+<style> /* Estilos de los elementos del encabezado y navegación */
   header {
-    background-color: #f0f0f0;
-    color: #333;
-    padding: 1% 0;
-    text-align: center;
-    justify-content: space-evenly;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin-bottom: 5%;
+    background-color: #f0f0f0; /* Color de fondo del encabezado. */
+    color: #333; /* Color del texto. */
+    padding: 1% 0; /* Espaciado interno. */
+    text-align: center; /* Alineación del texto. */
+    justify-content: space-evenly; /* Justificación de los elementos. */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra del encabezado. */
+    border-radius: 10px; /* Bordes redondeados. */
+    margin-bottom: 5%; /* Margen inferior del encabezado. */
   }
 
   nav ul li {
-    display: inline-block;
-    margin-left: 2%;
-    margin-right: 2%;
-    text-align: center;
+    display: inline-block; /* Elementos de la lista en línea. */
+    margin-left: 2%; /* Margen izquierdo de los elementos. */
+    margin-right: 2%; /* Margen derecho de los elementos. */
+    text-align: center; /* Alineación del texto en los elementos. */
   }
 
   nav ul li a {
-    color: #666;
-    text-decoration: none;
-    font-size: 1.2em;
+    color: #666; /* Color del enlace. */
+    text-decoration: none; /* Sin subrayado en los enlaces. */
+    font-size: 1.2em; /* Tamaño de fuente de los enlaces. */
   }
 
   nav ul li a:hover {
-    color: var(--text-color);
+    color: var(--text-color); /* Color del enlace al pasar el cursor. */
   }
 
   .dr a {
-    text-decoration: none;
-    background-color: var(--primary-color);
+    text-decoration: none; /* Sin subrayado en el enlace del logotipo. */
+    background-color: var(--primary-color); /* Color de fondo del enlace del logotipo. */
   }
 
   .dr {
-    transition: transform 0.3s;
-    margin-bottom: 2%;
+    transition: transform 0.3s; /* Transición suave al escalar. */
+    margin-bottom: 2%; /* Margen inferior del logotipo. */
   }
 
   .dr:hover {
-    transform: scale(1.2);
+    transform: scale(1.2); /* Escalar al pasar el cursor. */
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 600px) { /* Estilos responsivos para pantallas pequeñas */
     nav ul li {
-      display: block;
-      margin:3%;
-      text-align: justify;
+      display: block; /* Mostrar elementos de la lista en bloque. */
+      margin: 3%; /* Margen para los elementos. */
+      text-align: justify; /* Justificación del texto. */
     }
     nav ul {
-      margin-top: 7%;
+      margin-top: 7%; /* Margen superior de la lista de navegación. */
     }
   }
 </style>
