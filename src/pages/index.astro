@@ -1,99 +1,99 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Footer from "../components/Footer.astro"; // Importa el componente de pie de página
+import Header from "../components/Header.astro"; // Importa el componente de encabezado
+import Layout from "../layouts/Layout.astro"; // Importa el diseño principal de la página
+import Card from "../components/Card.astro"; // Importa el componente de tarjeta
 
-import { getDatos } from "../components/Data.astro"; // Cambia esta ruta según tu estructura de directorios
-import {urls} from "../components/Data.astro";
-let data = await getDatos();
+import { getDatos } from "../components/Data.astro"; // Importa la función para obtener datos
+import {urls} from "../components/Data.astro"; // Importa las URLs definidas en Data.astro
+let data = await getDatos(); // Llama a la función para obtener datos de manera asíncrona
 ---
 
 <Layout title={"Página de " + data?.nombre + " (Astro JS)"}>
   <main>
-    <Header />
-    <div class="content">
-      <h1>¡Bienvenido a mi sitio web! Soy {data?.nombre}, {data?.role}.</h1>
+    <Header /> <!-- Renderiza el encabezado -->
+    <div class="content"> <!-- Contenedor principal del contenido -->
+      <h1>¡Bienvenido a mi sitio web! Soy {data?.nombre}, {data?.role}.</h1> <!-- Título principal -->
       <h2>
         Aquí encontrarás una combinación única de blog y currículum vitae, donde
         comparto mis experiencias, proyectos y conocimientos.
-      </h2>
+      </h2> <!-- Subtítulo que describe el propósito del sitio -->
       <p>
         Soy apasionado por lo que hago y cada día trato de aprender más y me
         encanta compartir todo lo que he aprendido a lo largo de mi carrera.
         Espero que encuentres información útil y te animes a explorar más sobre
         mi trayectoria y trabajos.
-      </p>
+      </p> <!-- Párrafo que habla de la pasión del autor -->
       <p>
         ¡Gracias por visitar! Si tienes alguna pregunta o sugerencia, no dudes
         en ponerte en contacto conmigo a través de mi página de contacto.
         ¡Disfruta navegando por mi sitio!
-      </p>
+      </p> <!-- Párrafo de agradecimiento y contacto -->
       <h2>
         Para empezar explorando puedes acceder a siguientes partes de mi página:
-      </h2>
-      <div class="temas">
-      <Card tema="CV" img="https://cdn-icons-png.flaticon.com/512/3846/3846805.png" url={urls.cv}></Card>
-      <Card tema="Portafolio" img="https://cdn-icons-png.flaticon.com/512/1063/1063376.png" url={urls.portafolio}></Card>
-      <Card tema="Habilidades" img="https://cdn-icons-png.flaticon.com/512/942/942781.png" url={urls.habilidades}></Card>
+      </h2> <!-- Subtítulo para introducir las opciones de navegación -->
+      <div class="temas"> <!-- Contenedor para las tarjetas de navegación -->
+      <Card tema="CV" img="https://cdn-icons-png.flaticon.com/512/3846/3846805.png" url={urls.cv}></Card> <!-- Tarjeta para el CV -->
+      <Card tema="Portafolio" img="https://cdn-icons-png.flaticon.com/512/1063/1063376.png" url={urls.portafolio}></Card> <!-- Tarjeta para el portafolio -->
+      <Card tema="Habilidades" img="https://cdn-icons-png.flaticon.com/512/942/942781.png" url={urls.habilidades}></Card> <!-- Tarjeta para habilidades -->
     </div>
     </div>
-    <Footer />
+    <Footer /> <!-- Renderiza el pie de página -->
   </main>
 
   <style>
     body {
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
+      background-color: #f9f9f9; /* Color de fondo para el cuerpo */
+      margin: 0; /* Elimina márgenes por defecto */
+      padding: 0; /* Elimina relleno por defecto */
     }
 
     main {
-      width: 99%;
-      margin: auto;
-      padding: 1%;
+      width: 99%; /* Ancho del contenedor principal */
+      margin: auto; /* Centra el contenedor */
+      padding: 1%; /* Relleno interno del contenedor */
     }
 
     .content {
-      background-color: #ffffff;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 2%;
-      margin: 1%;
-      text-align: justify;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff; /* Color de fondo para el contenido */
+      border: 1px solid #ccc; /* Borde alrededor del contenido */
+      border-radius: 5px; /* Bordes redondeados */
+      padding: 2%; /* Relleno interno del contenido */
+      margin: 1%; /* Margen externo del contenido */
+      text-align: justify; /* Justifica el texto */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para el contenido */
     }
 
     h1 {
-      text-align: center;
-      font-size: 2em;
-      color: #333;
-      margin-bottom: 2%;
+      text-align: center; /* Centra el texto del encabezado */
+      font-size: 2em; /* Tamaño de fuente del encabezado */
+      color: #333; /* Color del texto */
+      margin-bottom: 2%; /* Margen inferior del encabezado */
     }
 
     h2 {
-      font-size: 1.6em;
-      color: #666;
-      margin-bottom: 1%;
-      text-align: center;
+      font-size: 1.6em; /* Tamaño de fuente de los subtítulos */
+      color: #666; /* Color del texto de los subtítulos */
+      margin-bottom: 1%; /* Margen inferior de los subtítulos */
+      text-align: center; /* Centra el texto de los subtítulos */
     }
 
     p {
-      margin-bottom: 1%;
-      font-size: 20px;
+      margin-bottom: 1%; /* Margen inferior de los párrafos */
+      font-size: 20px; /* Tamaño de fuente de los párrafos */
     }
 
     .temas
     {
-      text-align: center;
+      text-align: center; /* Centra el texto dentro de las tarjetas */
     }
 
     @media (max-width: 768px) {
       .temas {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
+        display: flex; /* Usa flexbox para el diseño */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+        flex-direction: column; /* Apila los elementos en columna en pantallas pequeñas */
       }
     }
-  </style></Layout
->
+  </style> <!-- Estilos CSS para la página -->
+</Layout> <!-- Cierra el componente Layout -->

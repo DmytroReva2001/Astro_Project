@@ -1,63 +1,63 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import Layout from "../layouts/Layout.astro";
-import SkillCard from "../components/SkillCard.astro";
+import Footer from "../components/Footer.astro"; // Importa el componente Footer desde la ruta especificada
+import Header from "../components/Header.astro"; // Importa el componente Header desde la ruta especificada
+import Layout from "../layouts/Layout.astro"; // Importa el layout general de la aplicación
+import SkillCard from "../components/SkillCard.astro"; // Importa el componente SkillCard para mostrar habilidades
 
-import { getDatos, getHabilidades } from "../components/Data.astro";
-let data = await getDatos();
-let habilidades = await getHabilidades();
+import { getDatos, getHabilidades } from "../components/Data.astro"; // Importa funciones para obtener datos y habilidades
+let data = await getDatos(); // Obtiene los datos del usuario
+let habilidades = await getHabilidades(); // Obtiene la lista de habilidades del usuario
 ---
 
-<Layout title={"Habilidades de " + data?.nombre}>
+<Layout title={"Habilidades de " + data?.nombre}> <!-- Establece el título del layout con el nombre del usuario -->
   <main>
-    <Header />
-    <h1>Mis Habilidades:</h1>
-    <div class="hability-cards">
+    <Header /> <!-- Muestra el componente Header -->
+    <h1>Mis Habilidades:</h1> <!-- Título principal de la sección -->
+    <div class="hability-cards"> <!-- Contenedor para las tarjetas de habilidades -->
       {
-        habilidades?.map((habilidad) => (
-        <a href={habilidad.url}>
-          <SkillCard skill={habilidad} />
+        habilidades?.map((habilidad) => ( // Mapea cada habilidad a un componente SkillCard
+        <a href={habilidad.url}> <!-- Enlaza cada tarjeta a su URL correspondiente -->
+          <SkillCard skill={habilidad} /> <!-- Renderiza la tarjeta de habilidad -->
         </a>
       ))
       }
       </div>
-    <Footer />
+    <Footer /> <!-- Muestra el componente Footer -->
   </main>
 
   <style>
     body {
-      background-color: #f9f9f9;
+      background-color: #f9f9f9; /* Establece el color de fondo del cuerpo */
     }
 
     main {
-      width: 99%;
-      margin: auto;
-      padding: 1%;
-      text-decoration: none;
+      width: 99%; /* Ancho del contenedor principal */
+      margin: auto; /* Centra el contenedor principal */
+      padding: 1%; /* Espaciado interno del contenedor principal */
+      text-decoration: none; /* Quita el subrayado de texto */
     }
 
     h1 {
-      text-align: center;
-      font-size: 2em;
-      color: #333;
+      text-align: center; /* Centra el texto del título */
+      font-size: 2em; /* Tamaño de fuente del título */
+      color: #333; /* Color del texto del título */
     }
 
     a
     {
-      text-decoration: none;
+      text-decoration: none; /* Quita el subrayado de los enlaces */
     }
 
     .hability-cards
     {
-      text-align: center;
+      text-align: center; /* Centra el contenido de las tarjetas */
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 768px) { /* Estilos para pantallas pequeñas */
       .hability-cards {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
+        display: flex; /* Usa flexbox para el diseño */
+        flex-wrap: wrap; /* Permite que las tarjetas se ajusten a la línea */
+        flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
       }
     }
   </style>
