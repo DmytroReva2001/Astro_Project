@@ -5,40 +5,64 @@ import Layout from "../layouts/Layout.astro"; // Importa el diseño principal de
 import Card from "../components/Card.astro"; // Importa el componente de tarjeta
 
 import { getDatos } from "../components/Data.astro"; // Importa la función para obtener datos
-import {urls} from "../components/Data.astro"; // Importa las URLs definidas en Data.astro
+import { urls } from "../components/Data.astro"; // Importa las URLs definidas en Data.astro
 let data = await getDatos(); // Llama a la función para obtener datos de manera asíncrona
 ---
 
 <Layout title={"Página de " + data?.nombre + " (Astro JS)"}>
   <main>
-    <Header /> <!-- Renderiza el encabezado -->
-    <div class="content"> <!-- Contenedor principal del contenido -->
-      <h1>¡Bienvenido a mi sitio web! Soy {data?.nombre}, {data?.role}.</h1> <!-- Título principal -->
+    <Header />
+    <!-- Renderiza el encabezado -->
+    <div class="content">
+      <!-- Contenedor principal del contenido -->
+      <h1>¡Bienvenido a mi sitio web! Soy {data?.nombre}, {data?.role}.</h1>
+      <!-- Título principal -->
       <h2>
         Aquí encontrarás una combinación única de blog y currículum vitae, donde
         comparto mis experiencias, proyectos y conocimientos.
-      </h2> <!-- Subtítulo que describe el propósito del sitio -->
+      </h2>
+      <!-- Subtítulo que describe el propósito del sitio -->
       <p>
         Soy apasionado por lo que hago y cada día trato de aprender más y me
         encanta compartir todo lo que he aprendido a lo largo de mi carrera.
         Espero que encuentres información útil y te animes a explorar más sobre
         mi trayectoria y trabajos.
-      </p> <!-- Párrafo que habla de la pasión del autor -->
+      </p>
+      <!-- Párrafo que habla de la pasión del autor -->
       <p>
         ¡Gracias por visitar! Si tienes alguna pregunta o sugerencia, no dudes
         en ponerte en contacto conmigo a través de mi página de contacto.
         ¡Disfruta navegando por mi sitio!
-      </p> <!-- Párrafo de agradecimiento y contacto -->
+      </p>
+      <!-- Párrafo de agradecimiento y contacto -->
       <h2>
         Para empezar explorando puedes acceder a siguientes partes de mi página:
-      </h2> <!-- Subtítulo para introducir las opciones de navegación -->
-      <div class="temas"> <!-- Contenedor para las tarjetas de navegación -->
-      <Card tema="CV" img="https://cdn-icons-png.flaticon.com/512/3846/3846805.png" url={urls.cv}></Card> <!-- Tarjeta para el CV -->
-      <Card tema="Portafolio" img="https://cdn-icons-png.flaticon.com/512/1063/1063376.png" url={urls.portafolio}></Card> <!-- Tarjeta para el portafolio -->
-      <Card tema="Habilidades" img="https://cdn-icons-png.flaticon.com/512/942/942781.png" url={urls.habilidades}></Card> <!-- Tarjeta para habilidades -->
+      </h2>
+      <!-- Subtítulo para introducir las opciones de navegación -->
+      <div class="temas">
+        <!-- Contenedor para las tarjetas de navegación -->
+        <Card
+          tema="CV"
+          img="https://cdn-icons-png.flaticon.com/512/3846/3846805.png"
+          url={urls.cv}
+        />
+        <!-- Tarjeta para el CV -->
+        <Card
+          tema="Portafolio"
+          img="https://cdn-icons-png.flaticon.com/512/1063/1063376.png"
+          url={urls.portafolio}
+        />
+        <!-- Tarjeta para el portafolio -->
+        <Card
+          tema="Habilidades"
+          img="https://cdn-icons-png.flaticon.com/512/942/942781.png"
+          url={urls.habilidades}
+        />
+        <!-- Tarjeta para habilidades -->
+      </div>
     </div>
-    </div>
-    <Footer /> <!-- Renderiza el pie de página -->
+    <Footer />
+    <!-- Renderiza el pie de página -->
   </main>
 
   <style>
@@ -83,8 +107,7 @@ let data = await getDatos(); // Llama a la función para obtener datos de manera
       font-size: 20px; /* Tamaño de fuente de los párrafos */
     }
 
-    .temas
-    {
+    .temas {
       text-align: center; /* Centra el texto dentro de las tarjetas */
     }
 
@@ -95,5 +118,8 @@ let data = await getDatos(); // Llama a la función para obtener datos de manera
         flex-direction: column; /* Apila los elementos en columna en pantallas pequeñas */
       }
     }
-  </style> <!-- Estilos CSS para la página -->
-</Layout> <!-- Cierra el componente Layout -->
+    /* Fin de estilos CSS para la página */
+  </style>
+
+  <!-- Cierra el componente Layout -->
+</Layout>

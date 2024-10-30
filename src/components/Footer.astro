@@ -1,41 +1,41 @@
 ---
 // Importa el objeto 'urls' desde el archivo 'Data.astro' en la carpeta de componentes
-import { urls } from '../components/Data.astro';
+import { urls } from "../components/Data.astro";
 
 // Importa la función 'getDatos' desde el archivo 'Data.astro' en la carpeta de componentes
 import { getDatos } from "../components/Data.astro";
 
-// Llama a la función 'getDatos' de forma asíncrona y espera su resultado, 
+// Llama a la función 'getDatos' de forma asíncrona y espera su resultado,
 // luego almacena los datos obtenidos en la variable 'data'
 let data = await getDatos();
 ---
 
 <footer>
   <!-- Sección de información general -->
-<div class="info">
-  <!-- Título de la sección -->
-  <h3>Información general:</h3>
-  <!-- Parrafo que muestra derechos de autor -->
-  <p>
-      Derechos de autor &copy; 2024 {data?.nombre}.<br>
+  <div class="info">
+    <!-- Título de la sección -->
+    <h3>Información general:</h3>
+    <!-- Parrafo que muestra derechos de autor -->
+    <p>
+      Derechos de autor &copy; 2024 {data?.nombre}.<br />
       Todos los derechos reservados.
-  </p>
-  <!-- Parrafo que muestra el correo electrónico como un enlace -->
-  <p>
-      Email: <a href={"mailto:"+data?.email}>{data?.email}</a>
-  </p>
-  <!-- Parrafo que muestra el número de teléfono como un enlace -->
-  <p>
-      Teléfono: <a href={"tel:"+data?.telefono}>{data?.telefono}</a>
-  </p>
-</div>
+    </p>
+    <!-- Parrafo que muestra el correo electrónico como un enlace -->
+    <p>
+      Email: <a href={"mailto:" + data?.email}>{data?.email}</a>
+    </p>
+    <!-- Parrafo que muestra el número de teléfono como un enlace -->
+    <p>
+      Teléfono: <a href={"tel:" + data?.telefono}>{data?.telefono}</a>
+    </p>
+  </div>
 
-<!-- Sección de enlaces -->
-<div class="links">
-  <!-- Título de la sección -->
-  <h3>Enlaces:</h3>
-  <!-- Lista de enlaces -->
-  <ul>
+  <!-- Sección de enlaces -->
+  <div class="links">
+    <!-- Título de la sección -->
+    <h3>Enlaces:</h3>
+    <!-- Lista de enlaces -->
+    <ul>
       <!-- Enlace a la página de inicio -->
       <li><a href={urls.inicio}>Inicio</a></li>
       <!-- Enlace al currículum vitae -->
@@ -46,10 +46,11 @@ let data = await getDatos();
       <li><a href={urls.portafolio}>Portafolio</a></li>
       <!-- Enlace a la sección de habilidades -->
       <li><a href={urls.habilidades}>Habilidades</a></li>
-  </ul>
-</div>
+    </ul>
+  </div>
 
-  <div class="social"> <!-- Enlace a las redes sociales con uso de iconos -->
+  <div class="social">
+    <!-- Enlace a las redes sociales con uso de iconos -->
     <h3>Redes sociales:</h3>
     <a
       href="https://es.linkedin.com/in/dmytro-reva-922505198?original_referer=https%3A%2F%2Fwww.google.com%2F"
@@ -84,7 +85,8 @@ let data = await getDatos();
     </a>
   </div>
 
-  <div class="astro"> <!-- Enlace a página oficial de Astro con uso de icono -->
+  <div class="astro">
+    <!-- Enlace a página oficial de Astro con uso de icono -->
     <h3>Creado con:</h3>
     <a href="https://astro.build/" target="_blanc">
       <svg
@@ -110,70 +112,70 @@ let data = await getDatos();
 </footer>
 
 <style>
-/* Estilo para el pie de página */
-footer {
-  display: flex; /* Utiliza flexbox para organizar el contenido */
-  justify-content: space-evenly; /* Distribuye el espacio entre los elementos de manera uniforme */
-  padding: 1%; /* Añade un padding del 1% */
-  background-color: #f0f0f0; /* Color de fondo claro */
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave en la parte superior */
-  border-radius: 10px; /* Bordes redondeados */
-  margin-top: 2%; /* Margen superior del 2% */
-}
-
-/* Estilo para los encabezados h3 */
-h3 {
-  color: #333; /* Color del texto oscuro */
-}
-
-/* Estilo para los párrafos */
-p {
-  color: #666; /* Color del texto gris */
-}
-
-/* Estilo para las listas no ordenadas */
-ul {
-  list-style: none; /* Elimina los puntos de las listas */
-  padding: 0; /* Elimina el padding por defecto */
-}
-
-/* Estilo para los enlaces */
-a {
-  color: #007bff; /* Color azul para los enlaces */
-  text-decoration: none; /* Elimina el subrayado por defecto */
-}
-
-/* Efecto al pasar el mouse sobre los enlaces */
-a:hover {
-  text-decoration: underline; /* Subrayar el texto al pasar el mouse */
-}
-
-/* Estilo para los elementos SVG */
-svg {
-  transition: transform 0.3s; /* Transición suave para transformaciones */
-}
-
-/* Estilo para los enlaces en la sección social */
-.social a {
-  display: inline-block; /* Muestra los enlaces en línea como bloques */
-}
-
-/* Efecto de escala al pasar el mouse sobre los elementos SVG */
-svg:hover {
-  transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */
-}
-
-/* Estilo para las secciones astro y social */
-.astro,
-.social {
-  text-align: center; /* Centra el texto */
-}
-
-/* Estilos para pantallas con un ancho máximo de 600px */
-@media only screen and (max-width: 600px) {
+  /* Estilo para el pie de página */
   footer {
-    display: block; /* Cambia el diseño a bloque para pantallas pequeñas */
-    text-align: center; /* Centra el texto en el pie de página */
+    display: flex; /* Utiliza flexbox para organizar el contenido */
+    justify-content: space-evenly; /* Distribuye el espacio entre los elementos de manera uniforme */
+    padding: 1%; /* Añade un padding del 1% */
+    background-color: #f0f0f0; /* Color de fondo claro */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave en la parte superior */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-top: 2%; /* Margen superior del 2% */
   }
-}
+
+  /* Estilo para los encabezados h3 */
+  h3 {
+    color: #333; /* Color del texto oscuro */
+  }
+
+  /* Estilo para los párrafos */
+  p {
+    color: #666; /* Color del texto gris */
+  }
+
+  /* Estilo para las listas no ordenadas */
+  ul {
+    list-style: none; /* Elimina los puntos de las listas */
+    padding: 0; /* Elimina el padding por defecto */
+  }
+
+  /* Estilo para los enlaces */
+  a {
+    color: #007bff; /* Color azul para los enlaces */
+    text-decoration: none; /* Elimina el subrayado por defecto */
+  }
+
+  /* Efecto al pasar el mouse sobre los enlaces */
+  a:hover {
+    text-decoration: underline; /* Subrayar el texto al pasar el mouse */
+  }
+
+  /* Estilo para los elementos SVG */
+  svg {
+    transition: transform 0.3s; /* Transición suave para transformaciones */
+  }
+
+  /* Estilo para los enlaces en la sección social */
+  .social a {
+    display: inline-block; /* Muestra los enlaces en línea como bloques */
+  }
+
+  /* Efecto de escala al pasar el mouse sobre los elementos SVG */
+  svg:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */
+  }
+
+  /* Estilo para las secciones astro y social */
+  .astro,
+  .social {
+    text-align: center; /* Centra el texto */
+  }
+
+  /* Estilos para pantallas con un ancho máximo de 600px */
+  @media only screen and (max-width: 600px) {
+    footer {
+      display: block; /* Cambia el diseño a bloque para pantallas pequeñas */
+      text-align: center; /* Centra el texto en el pie de página */
+    }
+  }
 </style>

@@ -1,5 +1,5 @@
 ---
-import { pool } from '../db'; // Importa la conexión a la base de datos
+import { pool } from "../db"; // Importa la conexión a la base de datos
 
 // Define un objeto con rutas para diferentes secciones de la aplicación
 export const urls = {
@@ -21,8 +21,8 @@ interface Data {
 export async function getDatos() {
   try {
     // Especifica el tipo de resultado esperado de la consulta
-    const [rows] = await pool.query<Data[]>('SELECT * FROM datos');
-    
+    const [rows] = await pool.query<Data[]>("SELECT * FROM datos");
+
     // Inicializamos un objeto con un tipo explícito
     let data: { [key: string]: string } = {};
 
@@ -33,7 +33,7 @@ export async function getDatos() {
 
     return data; // Devuelve el objeto con los datos
   } catch (error) {
-    console.error('Error al obtener datos de contacto:', error); // Manejo de errores
+    console.error("Error al obtener datos de contacto:", error); // Manejo de errores
   }
 }
 
@@ -92,7 +92,7 @@ export async function getProjects(): Promise<Project[] | undefined> {
           descripcion: row.projectDescription,
           img: row.projectImg,
           url: row.projectUrl,
-          tecnologias: [] // Inicializa la lista de tecnologías vacía
+          tecnologias: [], // Inicializa la lista de tecnologías vacía
         });
       }
 
@@ -100,8 +100,8 @@ export async function getProjects(): Promise<Project[] | undefined> {
         // Si el proyecto tiene tecnologías asociadas, las añade
         projectsMap.get(projectId)?.tecnologias?.push({
           id: row.techId,
-          img: row.techImg,  // Utiliza la URL de la imagen de la tecnología
-          url: row.techUrl   // Asumiendo que también se quiere usar la URL para otro propósito
+          img: row.techImg, // Utiliza la URL de la imagen de la tecnología
+          url: row.techUrl, // Asumiendo que también se quiere usar la URL para otro propósito
         });
       }
     }
@@ -110,9 +110,8 @@ export async function getProjects(): Promise<Project[] | undefined> {
     const projects = Array.from(projectsMap.values());
 
     return projects; // Devuelve la lista de proyectos
-
   } catch (error) {
-    console.error('Error al obtener datos de proyectos:', error); // Manejo de errores
+    console.error("Error al obtener datos de proyectos:", error); // Manejo de errores
     return undefined; // Devuelve undefined en caso de error
   }
 }
@@ -130,11 +129,11 @@ interface Habilidades {
 export async function getHabilidades(): Promise<Habilidades[] | undefined> {
   try {
     // Especifica el tipo de resultado esperado de la consulta
-    const [rows] = await pool.query<Habilidades[]>('SELECT * FROM habilidades');  
+    const [rows] = await pool.query<Habilidades[]>("SELECT * FROM habilidades");
 
     return rows; // Devuelve la lista de habilidades
   } catch (error) {
-    console.error('Error al obtener datos de habilidades:', error); // Manejo de errores
+    console.error("Error al obtener datos de habilidades:", error); // Manejo de errores
     return undefined; // Devuelve undefined en caso de error
   }
 }

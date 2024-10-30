@@ -9,23 +9,32 @@ let data = await getDatos(); // Espera a que se obtengan los datos del usuario
 let projects = await getProjects(); // Espera a que se obtengan los proyectos
 ---
 
-<Layout title={"Portafolio de " + data?.nombre}> <!-- Define el título del Layout utilizando el nombre del usuario -->
+<Layout title={"Portafolio de " + data?.nombre}>
+  <!-- Define el título del Layout utilizando el nombre del usuario -->
   <main>
-    <Header /> <!-- Muestra el encabezado del sitio -->
+    <Header />
+    <!-- Muestra el encabezado del sitio -->
 
-    <h1>Proyectos:</h1> <!-- Título de la sección de proyectos -->
+    <h1>Proyectos:</h1>
+    <!-- Título de la sección de proyectos -->
 
-    <div class="project-cards"> <!-- Contenedor para las tarjetas de proyectos -->
-    {
-      projects?.map((project) => ( // Mapea los proyectos obtenidos
-        <a href={"/"+project.nombre}>
-          <ProjectCard project={project} />
-        </a>
-      ))
-    }
+    <div class="project-cards">
+      <!-- Contenedor para las tarjetas de proyectos -->
+      {
+        projects?.map(
+          (
+            project // Mapea los proyectos obtenidos
+          ) => (
+            <a href={"/" + project.nombre}>
+              <ProjectCard project={project} />
+            </a>
+          )
+        )
+      }
     </div>
 
-    <Footer /> <!-- Muestra el pie de página -->
+    <Footer />
+    <!-- Muestra el pie de página -->
   </main>
 
   <style>
@@ -54,7 +63,8 @@ let projects = await getProjects(); // Espera a que se obtengan los proyectos
       text-align: center; /* Centra el texto dentro del contenedor de tarjetas */
     }
 
-    @media (max-width: 768px) { /* Estilos para pantallas pequeñas */
+    @media (max-width: 768px) {
+      /* Estilos para pantallas pequeñas */
       .project-cards {
         display: flex; /* Usa flexbox para el diseño */
         flex-wrap: wrap; /* Permite que las tarjetas se ajusten a múltiples líneas */

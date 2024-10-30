@@ -1,47 +1,47 @@
 ---
 interface Props {
-	// Definimos una interfaz para las propiedades que se recibirán, en este caso, solo el título
-	title: string; 
+  // Definimos una interfaz para las propiedades que se recibirán, en este caso, solo el título
+  title: string;
 }
 
 // Desestructuramos las propiedades recibidas para obtener el título
-const { title } = Astro.props; 
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<!-- Definimos la codificación de caracteres como UTF-8 -->
-		<meta charset="UTF-8" />
-		<!-- Descripción de la página, útil para SEO -->
-		<meta name="description" content="Astro description" />
-		<!-- Ajustamos la vista para dispositivos móviles -->
-		<meta name="viewport" content="width=device-width" />
-		<!-- Enlazamos el favicon de la página -->
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<!-- Información sobre el generador de la página -->
-		<meta name="generator" content={Astro.generator} />
-		<!-- Título de la página que se mostrará en la pestaña del navegador -->
-		<title>{title}</title>
-	</head>
-	<body>
-		<!-- Espacio reservado para el contenido que se insertará en la página -->
-		<slot />
-	</body>
+  <head>
+    <!-- Definimos la codificación de caracteres como UTF-8 -->
+    <meta charset="UTF-8" />
+    <!-- Descripción de la página, útil para SEO -->
+    <meta name="description" content="Astro description" />
+    <!-- Ajustamos la vista para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width" />
+    <!-- Enlazamos el favicon de la página -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Información sobre el generador de la página -->
+    <meta name="generator" content={Astro.generator} />
+    <!-- Título de la página que se mostrará en la pestaña del navegador -->
+    <title>{title}</title>
+  </head>
+  <body>
+    <!-- Espacio reservado para el contenido que se insertará en la página -->
+    <slot />
+  </body>
 </html>
 
 <style is:global>
-	/* Importamos la fuente Montserrat desde Google Fonts */
-	@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+  /* Importamos la fuente Montserrat desde Google Fonts */
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
-	:root {
-		/* Definimos variables CSS para los colores principales */
-		--primary-color: rgb(54, 223, 223);
-		--text-color: rgb(63, 184, 184);
-	}
+  :root {
+    /* Definimos variables CSS para los colores principales */
+    --primary-color: rgb(54, 223, 223);
+    --text-color: rgb(63, 184, 184);
+  }
 
-	html {
-		/* Aplicamos la fuente Montserrat a todo el documento */
-		font-family: 'Montserrat', sans-serif; 
-	}
+  html {
+    /* Aplicamos la fuente Montserrat a todo el documento */
+    font-family: "Montserrat", sans-serif;
+  }
 </style>

@@ -8,16 +8,16 @@ const skill = Astro.props.skill;
   <!-- Se muestra la imagen de la habilidad con su nombre como texto alternativo -->
   <img src={skill.img} alt={skill.nombre} />
   <div>
-      <!-- Se muestra el nombre de la habilidad en un encabezado de segundo nivel -->
-      <h2>{skill.nombre}</h2>
-      <!-- Se muestra la descripción de la habilidad, resaltando el nivel -->
-      <p>Nivel: <strong>{skill.descripcion}</strong></p>
+    <!-- Se muestra el nombre de la habilidad en un encabezado de segundo nivel -->
+    <h2>{skill.nombre}</h2>
+    <!-- Se muestra la descripción de la habilidad, resaltando el nivel -->
+    <p>Nivel: <strong>{skill.descripcion}</strong></p>
   </div>
 </div>
 
 <style>
-/* Estilos para la tarjeta que muestra la habilidad */
-.card {
+  /* Estilos para la tarjeta que muestra la habilidad */
+  .card {
     margin: 1%; /* Margen exterior de la tarjeta */
     padding: 1%; /* Espacio interno de la tarjeta */
     border: 1px solid #ccc; /* Borde de la tarjeta */
@@ -29,43 +29,43 @@ const skill = Astro.props.skill;
     width: 20%; /* Ancho de la tarjeta */
     height: 400px; /* Altura de la tarjeta */
     text-align: center; /* Alineación del texto al centro */
-}
+  }
 
-/* Estilo para el efecto hover de la tarjeta */
-.card:hover {
+  /* Estilo para el efecto hover de la tarjeta */
+  .card:hover {
     transform: translateY(-5px); /* Desplazamiento hacia arriba en hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
-}
+  }
 
-/* Estilo para la imagen de la habilidad */
-img {
+  /* Estilo para la imagen de la habilidad */
+  img {
     width: 100%; /* Ancho de la imagen al 100% del contenedor */
     height: 300px; /* Altura fija de la imagen */
     border-radius: 10px 10px 10px 10px; /* Esquinas redondeadas de la imagen */
-}
+  }
 
-/* Estilo para el contenido de la tarjeta */
-.card-content {
+  /* Estilo para el contenido de la tarjeta */
+  .card-content {
     padding: 2%; /* Espacio interno para el contenido */
-}
+  }
 
-/* Estilo para el encabezado de la habilidad */
-h2 {
+  /* Estilo para el encabezado de la habilidad */
+  h2 {
     color: #333; /* Color del texto del encabezado */
     font-size: 23px; /* Tamaño de fuente del encabezado */
-}
+  }
 
-/* Estilo para el párrafo que muestra la descripción */
-p {
+  /* Estilo para el párrafo que muestra la descripción */
+  p {
     color: #666; /* Color del texto del párrafo */
     font-size: 20px; /* Tamaño de fuente del párrafo */
-}
+  }
 
-/* Estilos responsivos para pantallas pequeñas */
-@media (max-width: 768px) {
+  /* Estilos responsivos para pantallas pequeñas */
+  @media (max-width: 768px) {
     .card {
-        width: 85%; /* Ancho de la tarjeta en pantallas pequeñas */
-        margin: 10px; /* Margen de la tarjeta en pantallas pequeñas */
+      width: 85%; /* Ancho de la tarjeta en pantallas pequeñas */
+      margin: 10px; /* Margen de la tarjeta en pantallas pequeñas */
     }
-}
+  }
 </style>
