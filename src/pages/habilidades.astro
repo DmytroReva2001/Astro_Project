@@ -3,8 +3,9 @@ import Footer from "../components/Footer.astro"; // Importa el componente Footer
 import Header from "../components/Header.astro"; // Importa el componente Header desde la ruta especificada
 import Layout from "../layouts/Layout.astro"; // Importa el layout general de la aplicación
 import SkillCard from "../components/SkillCard.astro"; // Importa el componente SkillCard para mostrar habilidades
+import type { Habilidad } from "../components/Interfaces.astro"; // Importa la interfaz Habilidad como un tipo
 
-import { getDatos, getHabilidades } from "../components/Data.astro"; // Importa funciones para obtener datos y habilidades
+import { getDatos, getHabilidades } from "../db"; // Importa funciones para obtener datos y habilidades
 let data = await getDatos(); // Obtiene los datos del usuario
 let habilidades = await getHabilidades(); // Obtiene la lista de habilidades del usuario
 ---
@@ -15,7 +16,7 @@ let habilidades = await getHabilidades(); // Obtiene la lista de habilidades del
     <h1>Mis Habilidades:</h1> <!-- Título principal de la sección -->
     <div class="hability-cards"> <!-- Contenedor para las tarjetas de habilidades -->
       {
-        habilidades?.map((habilidad) => ( // Mapea cada habilidad a un componente SkillCard
+        habilidades?.map((habilidad: Habilidad) => ( // Mapea cada habilidad a un componente SkillCard
         <a href={habilidad.url}> <!-- Enlaza cada tarjeta a su URL correspondiente -->
           <SkillCard skill={habilidad} /> <!-- Renderiza la tarjeta de habilidad -->
         </a>

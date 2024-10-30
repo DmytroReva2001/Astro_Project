@@ -1,9 +1,9 @@
 ---
-// Importa el objeto 'urls' desde el archivo 'Data.astro' en la carpeta de componentes
-import { urls } from "../components/Data.astro";
+// Importa el objeto 'urls' desde el archivo 'Urls.astro' en la carpeta de componentes
+import { urls } from "../components/Urls.astro";
 
-// Importa la función 'getDatos' desde el archivo 'Data.astro' en la carpeta de componentes
-import { getDatos } from "../components/Data.astro";
+// Importa la función 'getDatos' desde el archivo 'db.js'
+import { getDatos } from "../db";
 
 // Llama a la función 'getDatos' de forma asíncrona y espera su resultado,
 // luego almacena los datos obtenidos en la variable 'data'

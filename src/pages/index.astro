@@ -4,8 +4,8 @@ import Header from "../components/Header.astro"; // Importa el componente de enc
 import Layout from "../layouts/Layout.astro"; // Importa el diseño principal de la página
 import Card from "../components/Card.astro"; // Importa el componente de tarjeta
 
-import { getDatos } from "../components/Data.astro"; // Importa la función para obtener datos
-import { urls } from "../components/Data.astro"; // Importa las URLs definidas en Data.astro
+import { getDatos } from "../db"; // Importa la función para obtener datos
+import { urls } from "../components/Urls.astro"; // Importa las URLs definidas en Data.astro
 let data = await getDatos(); // Llama a la función para obtener datos de manera asíncrona
 ---
 

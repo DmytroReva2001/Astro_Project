@@ -3,7 +3,7 @@ import Footer from "../components/Footer.astro"; // Importa el componente Footer
 import Header from "../components/Header.astro"; // Importa el componente Header
 import ProjectCard from "../components/ProjectCard.astro"; // Importa el componente ProjectCard
 import Layout from "../layouts/Layout.astro"; // Importa el diseño general del Layout
-import { getDatos, getProjects } from "../components/Data.astro"; // Importa las funciones para obtener datos
+import { getDatos, getProjects } from "../db"; // Importa las funciones para obtener datos
 
 let data = await getDatos(); // Espera a que se obtengan los datos del usuario
 let projects = await getProjects(); // Espera a que se obtengan los proyectos
