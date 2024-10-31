@@ -13,7 +13,7 @@ let habilidades = await getHabilidades(); // Obtiene la lista de habilidades del
 <Layout title={"Habilidades de " + data?.nombre}> <!-- Establece el título del layout con el nombre del usuario -->
   <main>
     <Header /> <!-- Muestra el componente Header -->
-    <h1>Mis Habilidades:</h1> <!-- Título principal de la sección -->
+    <h1>Mis Habilidades</h1> <!-- Título principal de la sección -->
     <div class="hability-cards"> <!-- Contenedor para las tarjetas de habilidades -->
       {
         habilidades?.map((habilidad: Habilidad) => ( // Mapea cada habilidad a un componente SkillCard

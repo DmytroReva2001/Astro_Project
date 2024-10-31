@@ -9,9 +9,9 @@ const project = Astro.props.project; // Se obtiene el proyecto de las propiedade
     <p>{project.descripcion}</p> <!-- Descripción del proyecto -->
   </div>
   <div class="tec-icon"> <!-- Contenedor para los iconos de tecnología -->
-    <h2>Tecnologías:</h2> <!-- Título de la sección de tecnologías -->
-    {project.tecnologias.map((tech: { img: string, url: string }) => ( <!-- Mapeo de tecnologías -->
-    <a href={tech.url} target="_blank"><img src={tech.img} alt="Tecnología"/></a> <!-- Enlace a la tecnología con su imagen -->
+    <h3>TECNOLOGIAS</h3> <!-- Título de la sección de tecnologías -->
+    {project.tecnologias.map((tech: { img: string, url: string }) => (
+    <a href={tech.url} target="_blank"><img src={tech.img} alt="Tecnología"/></a>
   ))}
   </div>
 </div>
@@ -45,7 +45,12 @@ const project = Astro.props.project; // Se obtiene el proyecto de las propiedade
 
   h2 { /* Estilo para los títulos */
     color: #333; /* Color del texto */
-    font-size: 23px; /* Tamaño de fuente */
+    font-size: 20px; /* Tamaño de fuente */
+  }
+
+  h3 { /* Estilo para los títulos */
+    color: #333; /* Color del texto */
+    font-size: 15px; /* Tamaño de fuente */
   }
 
   p { /* Estilo para los párrafos */
