@@ -1,89 +1,93 @@
 ---
 const project = Astro.props.project; // Se obtiene el proyecto de las propiedades de Astro
+import type { Tech } from "../components/Interfaces.astro";
 ---
-<a href={project.url}> <!-- Enlace que lleva a la URL del proyecto -->
-<div class="card"> <!-- Contenedor principal de la tarjeta del proyecto -->
-  <img src={project.img} alt={project.nombre} /> <!-- Imagen del proyecto con su nombre como texto alternativo -->
-  <div> <!-- Contenedor para el título y descripción -->
-    <h2>{project.nombre}</h2> <!-- Título del proyecto -->
-    <p>{project.descripcion}</p> <!-- Descripción del proyecto -->
+
+<a href={project.url}>
+  <div class="card">
+    <img src={project.img} alt={project.nombre} />
+    <div>
+      <h2>{project.nombre}</h2>
+      <p>{project.descripcion}</p>
+    </div>
+    <div class="tec-icon">
+      <h3>TECNOLOGÍAS</h3>
+      {project.tecnologias.map((tech: Tech) => (
+        <a href={tech.url} target="_blank" rel="noopener noreferrer">
+          <img src={tech.img} alt="Tecnología" />
+        </a>
+      ))}
+    </div>
   </div>
-  <div class="tec-icon"> <!-- Contenedor para los iconos de tecnología -->
-    <h3>TECNOLOGIAS</h3> <!-- Título de la sección de tecnologías -->
-    {project.tecnologias.map((tech: { img: string, url: string }) => (
-    <a href={tech.url} target="_blank"><img src={tech.img} alt="Tecnología"/></a>
-  ))}
-  </div>
-</div>
 </a>
 
 <style>
-  .card { /* Estilo para la tarjeta del proyecto */
-    margin: 2%; /* Margen alrededor de la tarjeta */
-    padding: 1%; /* Relleno interno de la tarjeta */
+  .card {
+    padding: 10px; /* Relleno interno de la tarjeta */
+    margin-bottom: 5%;
     border: 1px solid #ccc; /* Borde de la tarjeta */
     border-radius: 10px; /* Bordes redondeados */
     overflow: hidden; /* Oculta el contenido que desborda */
-    transition: transform 0.3s; /* Transición suave para el efecto hover */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transición suave para el efecto hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra de la tarjeta */
     background-color: #f0f0f0; /* Color de fondo de la tarjeta */
-    display: inline-block; /* Muestra tarjetas en línea */
-    width: 20%; /* Ancho de la tarjeta */
-    height: fit-content; /* Altura ajustada al contenido */
+    display: flex; /* Usar flexbox para contenido interno */
+    flex-direction: column; /* Organiza el contenido en columnas */
+    justify-content: space-between; /* Espacio entre elementos internos */
+    width: 300px; /* Ancho fijo para todas las tarjetas */
+    height: 500px; /* Altura fija para mantener la uniformidad */
+    text-align: center;
   }
 
-  .card:hover { /* Efecto al pasar el ratón sobre la tarjeta */
+  .card:hover {
     transform: translateY(-5px); /* Levanta la tarjeta ligeramente */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
   }
 
-  img { /* Estilo para las imágenes */
-    width: 100%; /* Ancho completo */
-    height: 300px; /* Altura fija */
-    border-radius: 10px 10px 10px 10px; /* Bordes redondeados */
+  img {
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
   }
 
-  h2 { /* Estilo para los títulos */
+  h2 {
     color: #333; /* Color del texto */
     font-size: 20px; /* Tamaño de fuente */
   }
 
-  h3 { /* Estilo para los títulos */
+  h3 {
     color: #333; /* Color del texto */
     font-size: 15px; /* Tamaño de fuente */
   }
 
-  p { /* Estilo para los párrafos */
+  p {
     color: #666; /* Color del texto */
     font-size: 15px; /* Tamaño de fuente */
+    flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible */
   }
 
-  .tec-icon img { /* Estilo para las imágenes de tecnologías */
+  .tec-icon img {
     width: auto; /* Ancho automático */
     height: 50px; /* Altura fija */
     padding: 3%; /* Relleno alrededor de las imágenes */
+    transition: transform 0.3s /* Transición suave para el efecto hover */
   }
 
-  .tec-icon img { /* Transición para las imágenes de tecnologías */
-    transition: transform 0.3s; /* Transición suave al transformar */
+  .tec-icon img:hover {
+    transform: scale(1.2); /* Aumenta el tamaño de la imagen al pasar el ratón */
   }
 
-  .tec-icon img:hover { /* Efecto al pasar el ratón sobre las imágenes de tecnologías */
-    transform: scale(1.2); /* Aumenta el tamaño de la imagen */
-  }
-
-  .tec-icon { /* Estilo para el contenedor de iconos de tecnología */
+  .tec-icon {
     text-align: center; /* Centra el texto */
   }
 
-  a { /* Estilo para los enlaces */
+  a {
     text-decoration: none; /* Sin subrayado */
   }
 
-  @media (max-width: 768px) { /* Estilo responsivo para pantallas pequeñas */
-    .card { /* Estilo para la tarjeta en pantallas pequeñas */
-      width: 95%; /* Ancho ajustado */
-      text-align: center; /* Centra el texto */
+  @media (max-width: 768px) {
+    .card {
+      width: 90%; /* Ancho ajustado para pantallas pequeñas */
     }
   }
 </style>

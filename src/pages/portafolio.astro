@@ -10,31 +10,21 @@ let projects = await getProjects(); // Espera a que se obtengan los proyectos
 ---
 
 <Layout title={"Portafolio de " + data?.nombre}>
-  <!-- Define el título del Layout utilizando el nombre del usuario -->
   <main>
     <Header />
-    <!-- Muestra el encabezado del sitio -->
-
     <h1>PROYECTOS</h1>
-    <!-- Título de la sección de proyectos -->
 
     <div class="project-cards">
-      <!-- Contenedor para las tarjetas de proyectos -->
       {
-        projects?.map(
-          (
-            project // Mapea los proyectos obtenidos
-          ) => (
-            <a href={"/" + project.nombre}>
-              <ProjectCard project={project} />
-            </a>
-          )
-        )
+        projects?.map((project) => (
+          <a href={"/" + project.nombre}>
+            <ProjectCard project={project} />
+          </a>
+        ))
       }
     </div>
 
     <Footer />
-    <!-- Muestra el pie de página -->
   </main>
 
   <style>
@@ -58,15 +48,17 @@ let projects = await getProjects(); // Espera a que se obtengan los proyectos
     }
 
     .project-cards {
-      text-align: center; /* Centra el texto dentro del contenedor de tarjetas */
+      display: flex; /* Usa flexbox para el diseño */
+      flex-wrap: wrap; /* Permite que las tarjetas se ajusten a múltiples líneas */
+      justify-content: space-around; /* Espaciado uniforme entre tarjetas */
+      margin: 0 auto; /* Centra el contenedor */
+      max-width: 1200px; /* Máximo ancho del contenedor */
     }
 
     @media (max-width: 768px) {
-      /* Estilos para pantallas pequeñas */
       .project-cards {
-        display: flex; /* Usa flexbox para el diseño */
-        flex-wrap: wrap; /* Permite que las tarjetas se ajusten a múltiples líneas */
-        flex-direction: column; /* Organiza las tarjetas en columnas */
+        flex-direction: column; /* Organiza las tarjetas en columnas en pantallas pequeñas */
+        align-items: center; /* Centra los elementos en el contenedor */
       }
     }
   </style>
